@@ -1,7 +1,7 @@
 mkdir $1
 
 cp -r tmp_dir_$2/*bam* $1
-cp od_dir_$2/*counts* $1
+cp od_dir_$2/*IncLvl* $1
 cp od_dir_$2/*grouping* $1
 
 for bam in $1*bam*
@@ -9,7 +9,7 @@ do
 bams+=($bam)
 done
 
-for file in $1*counts*;
+for file in $1*IncLvl*;
 do
 name=$(echo $file | rev | cut -c25- | rev)
 

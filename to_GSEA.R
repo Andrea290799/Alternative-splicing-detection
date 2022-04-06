@@ -31,4 +31,4 @@ for (i in 1:length(names)){
 }
 
 
-write.table(data.frame(final_names, final_FDRs, row.names = NULL), file = args[2])
+write.table(data.frame(final_names, final_FDRs, row.names = NULL), file = args[2], sep='\t')
