@@ -26,16 +26,9 @@ do
     sample=$(echo $name | cut -c13-)
     echo $sample
 
-    #$(STAR-Fusion --genome_lib_dir ./GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir \
-             #--left_fq ${samples[0]} \
-             #--right_fq ${samples[1]} \
-             #--output_dir ${sample}_star_fusion_outdir)
-
-    $(FusionInspector --fusions ${sample}_star_fusion_outdir/star-fusion.fusion_predictions.tsv  \
-                --genome_lib ./GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir \
-                --left_fq ${samples[0]} --right_fq ${samples[0]} \
-                --out_dir ${sample}_FusionInspector_outdir \
-                --out_prefix finspector \
-                --vis)
+    $(STAR-Fusion --genome_lib_dir ./GRCh38_gencode_v37_CTAT_lib_Mar012021.plug-n-play/ctat_genome_lib_build_dir \
+             --left_fq ${samples[0]} \
+             --right_fq ${samples[1]} \
+             --output_dir ${sample}_star_fusion_outdir --FusionInspector validate --examine_coding_effect)
 
 done

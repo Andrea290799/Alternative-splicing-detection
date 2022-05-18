@@ -1,6 +1,6 @@
 mkdir $1
 cp -r tmp_dir_$2/*bam* $1
-cp od_dir_$2/*IncLvl* $1
+cp filtered/od_dir_$2/*IncLvl* $1
 cp od_dir_$2/*grouping* $1
 
 for bam in $1*bam*
